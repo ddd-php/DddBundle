@@ -1,5 +1,5 @@
 {
-    "name": "ddd/bundle",
+    "name": "ddd/ddd-bundle",
     "type": "bundle",
     "description": "Domain Driven Design bundle.",
     "keywords": ["slugifier", "slug", "url", "symfony", "bundle"],
