@@ -1,7 +1,7 @@
 {
     "name": "ddd/bundle",
     "type": "bundle",
-    "description": "Domain Driven Design bundle.",
+    "description": "Integration of the DDD components for Symfony2.",
     "keywords": ["slugifier", "slug", "url", "symfony", "bundle"],
     "license": "MIT",
     "authors": [
