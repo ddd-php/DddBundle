@@ -5,15 +5,29 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
+        <!-- generators -->
         <parameter key="ddd.slug.default_generator.class">Ddd\Slug\Infra\SlugGenerator\DefaultSlugGenerator</parameter>
+
+        <!-- transliterators -->
+        <parameter key="ddd.slug.transliterators">Ddd\Slug\Infra\Transliterator\TransliteratorCollection</parameter>
         <parameter key="ddd.slug.latin_transliterator">Ddd\Slug\Infra\Transliterator\LatinTransliterator</parameter>
     </parameters>
 
     <services>
+        <!-- generators -->
+
+        <service id="ddd.slug.generator" alias="ddd.slug.default_generator" />
+
         <service id="ddd.slug.default_generator" class="%ddd.slug.default_generator.class%">
-            <argument type="service" id="ddd.slug.latin_transliterator" />
+            <argument type="collection" id="ddd.slug.latin_transliterator" />
         </service>
 
-        <service id="ddd.slug.latin_transliterator" class="%ddd.slug.latin_transliterator%" />
+        <!-- transliterators -->
+
+        <service id="ddd.slug.transliterators" class="%ddd.slug.transliterators.class%" />
+
+        <service id="ddd.slug.latin_transliterator" class="%ddd.slug.latin_transliterator.class%">
+            <tag name="ddd.slug.transliterator" />
+        </service>
     </services>
 </container>
