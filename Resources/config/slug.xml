@@ -19,7 +19,8 @@
         <service id="ddd.slug.generator" alias="ddd.slug.default_generator" />
 
         <service id="ddd.slug.default_generator" class="%ddd.slug.default_generator.class%">
-            <argument type="collection" id="ddd.slug.latin_transliterator" />
+            <argument type="service" id="ddd.slug.transliterators" />
+            <argument>%sss.slug.options%</argument>
         </service>
 
         <!-- transliterators -->
